@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSA Buddy Hints</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>DSA Buddy 🧠</h1>
+      <p class="subtitle">AI-powered progressive hints</p>
+    </header>
+
+    <div class="content-area">
+      <div id="status-message" class="status"></div>
+
+      <div class="problem-info">
+        <h2 id="problem-title">No Problem Detected</h2>
+        <p class="info-text">Navigate to a LeetCode or Codeforces problem page to get started.</p>
+      </div>
+
+      <!-- Mode Selectors -->
+      <div class="mode-selector">
+        <button class="mode-btn active" data-mode="standard" title="Get standard progressive hints">Hints</button>
+        <button class="mode-btn" data-mode="logic" title="Find logic bugs">Logic Dr.</button>
+        <button class="mode-btn" data-mode="concept" title="Explain concepts">Concept</button>
+      </div>
+
+      <button id="get-hints-btn" class="primary-btn" disabled>Get Hints</button>
+
+      <div id="hints-container" class="hints-list hidden">
+        <div class="hint-item">
+          <button class="hint-header">Hint 1 <span class="arrow">▼</span></button>
+          <div class="hint-content" id="hint1"></div>
+        </div>
+        <div class="hint-item">
+          <button class="hint-header">Hint 2 <span class="arrow">▼</span></button>
+          <div class="hint-content" id="hint2"></div>
+        </div>
+        <div class="hint-item">
+          <button class="hint-header">Hint 3 <span class="arrow">▼</span></button>
+          <div class="hint-content" id="hint3"></div>
+        </div>
+      </div>
+
+      <!-- Code Snippets Section (Separated) -->
+      <div id="snippets-section" class="hidden">
+          <h3 class="section-title">Code Snippets <span class="sub-title">(Based on your code)</span></h3>
+          <div id="snippets-wrapper"></div>
+      </div>
+      
+      <div id="loader" class="hidden">
+        <div class="spinner"></div>
+        <p>Analyzing problem & code...</p>
+      </div>
+    </div>
+
+  </div>
+  <script src="panel.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "DSA Buddy",
+  "version": "1.0",
+  "description": "Get progressive hints for LeetCode and Codeforces problems using AI.",
+  "side_panel": {
+    "default_path": "panel.html"
+  },
+  "permissions": [
+    "sidePanel",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://leetcode.com/*",
+    "*://codeforces.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://leetcode.com/*",
+        "*://codeforces.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_title": "Open DSA Buddy Hints"
+  }
+}
